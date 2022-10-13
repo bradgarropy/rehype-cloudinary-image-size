@@ -5,9 +5,9 @@
         "url": "https://bradgarropy.com"
     },
     "bugs": {
-        "url": "https://github.com/bradgarropy/node-library-starter/issues"
+        "url": "https://github.com/bradgarropy/rehype-cloudinary-image-size/issues"
     },
-    "description": "🟢 node library starter",
+    "description": "🖼 rehype cloudinary image size",
     "devDependencies": {
         "@bradgarropy/eslint-config": "^1.1.0",
         "@bradgarropy/eslint-config-typescript": "^1.0.0",
@@ -32,22 +32,24 @@
     "files": [
         "dist"
     ],
-    "homepage": "https://github.com/bradgarropy/node-library-starter",
+    "homepage": "https://github.com/bradgarropy/rehype-cloudinary-image-size",
     "keywords": [
         "node",
         "typescript",
         "eslint",
         "prettier",
         "vitest",
-        "starter",
-        "hacktoberfest"
+        "hacktoberfest",
+        "rehype",
+        "unified",
+        "cloudinary"
     ],
     "license": "MIT",
     "main": "dist/index.js",
-    "name": "@bradgarropy/node-library-starter",
+    "name": "@bradgarropy/rehype-cloudinary-image-size",
     "repository": {
         "type": "git",
-        "url": "https://github.com/bradgarropy/node-library-starter"
+        "url": "https://github.com/bradgarropy/rehype-cloudinary-image-size"
     },
     "scripts": {
         "start": "tsc --watch",
@@ -64,5 +66,5 @@
     },
     "type": "module",
     "types": "dist/types/index.d.ts",
-    "version": "1.5.0"
+    "version": "0.0.1"
 }
