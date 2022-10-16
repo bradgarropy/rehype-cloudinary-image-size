@@ -10,9 +10,7 @@
 [![contributors][contributors-badge]][contributors]
 [![discord][discord-badge]][discord]
 
-_Starter for `node` libraries._
-
-// TODO: write intro section.
+_[Rehype][rehype] plugin to add width and height to [Cloudinary][cloudinary] images._
 
 ## 📦 Installation
 
@@ -24,11 +22,54 @@ npm install @bradgarropy/rehype-cloudinary-image-size
 
 ## 🥑 Usage
 
-// TODO: Write usage section.
+This is a [rehype][rehype] plugin for use in a [unified][unified] chain that modifies HTML syntax trees. It adds `width` and `height` attributes to all `img` tags that reference images hosted on [Cloudinary][cloudinary].
+
+```typescript
+import {rehypeCloudinaryImageSize} from "@bradgarropy/rehype-cloudinary-image-size"
+import rehypeParse from "rehype-parse"
+import rehypeStringify from "rehype-stringify"
+import {unified} from "unified"
+
+const processor = unified()
+    .use(rehypeParse, {fragment: true})
+    .use(rehypeCloudinaryImageSize)
+    .use(rehypeStringify)
+
+const html = await processor.process(
+    '<img src="https://res.cloudinary.com/bradgarropy/image/upload/f_auto,q_auto/bradgarropy.com/pages/home/profile.jpg">',
+)
+
+console.log(file)
+
+// output
+// <img
+//   src="https://res.cloudinary.com/bradgarropy/image/upload/f_auto,q_auto/bradgarropy.com/pages/home/profile.jpg"
+//   width="460"
+//   height="460"
+// >
+```
 
 ## 📖 API Reference
 
-// TODO: Write api reference section.
+### `use(rehypeCloudinaryImageSize)`
+
+This plugin only adds `width` and `height` attributes to images hosted on Cloudinary. All other sources are ignored. Any existing attributes are preserved.
+
+```html
+<!-- input -->
+<img
+    src="https://res.cloudinary.com/bradgarropy/image/upload/f_auto,q_auto/bradgarropy.com/pages/home/profile.jpg"
+    alt="description"
+/>
+
+<!-- output -->
+<img
+    src="https://res.cloudinary.com/bradgarropy/image/upload/f_auto,q_auto/bradgarropy.com/pages/home/profile.jpg"
+    alt="description"
+    width="460"
+    height="460"
+/>
+```
 
 ## ❔ Questions
 
@@ -72,3 +113,6 @@ npm install @bradgarropy/rehype-cloudinary-image-size
 [typescript-badge]: https://img.shields.io/npm/types/@bradgarropy/rehype-cloudinary-image-size?style=flat-square
 [discord]: https://bradgarropy.com/discord
 [discord-badge]: https://img.shields.io/discord/748196643140010015?style=flat-square
+[rehype]: https://github.com/rehypejs/rehype
+[unified]: https://github.com/unifiedjs/unified
+[cloudinary]: https://cloudinary.com
