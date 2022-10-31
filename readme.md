@@ -39,7 +39,7 @@ const html = await processor.process(
     '<img src="https://res.cloudinary.com/bradgarropy/image/upload/f_auto,q_auto/bradgarropy.com/pages/home/profile.jpg">',
 )
 
-console.log(file)
+console.log(html)
 
 // output
 // <img
